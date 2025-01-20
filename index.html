@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Notion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Simple Notion</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                       <a href="login.html" class="btn btn-outline-light nav-link">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <main class="d-flex mt-4">
+            <aside class="sidebar bg-light p-3">
+                <h2 class="mb-3">Pages</h2>
+                <ul id="page-list" class="list-unstyled">
+                    <!-- รายการหน้าจะถูกใส่ที่นี่ -->
+                </ul>
+                <button id="add-page-btn" class="btn btn-primary mt-3 w-100">Add New Page</button>
+            </aside>
+            <section class="content p-3 flex-grow-1">
+                <h2 id="page-title" class="mb-3">Select a page or Add New Page</h2>
+                <div id="page-content">
+                    <!-- เนื้อหาของหน้าจะถูกใส่ที่นี่ -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

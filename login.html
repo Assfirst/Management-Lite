@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Simple Notion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+         <div class="row justify-content-center mt-5">
+           <div class="col-md-6 auth-form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" class="form-control mb-2">
+                <input type="password" id="login-password" placeholder="Password" class="form-control mb-2">
+                <div id="login-error" class="text-danger mb-3"></div>
+                <button id="login-btn" class="btn btn-primary btn-block">Login</button>
+                <p class="mt-3"><a href="signup.html">Create an account</a> | <a href="forgot-password.html">Forgot your password?</a></p>
+            </div>
+         </div>
+    </div>
+     <script>
+      // โค้ด JavaScript สำหรับ login.html ที่ผมให้ไปในขั้นตอนที่ 13 (ปรับปรุง) จะต้องมาใส่ตรงนี้
+        const loginBtn = document.getElementById('login-btn');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginError = document.getElementById('login-error');
+
+        loginBtn.addEventListener('click', () => {
+            const email = loginEmail.value.trim(); // Trim whitespace
+            const password = loginPassword.value.trim(); // Trim whitespace
+            let hasError = false;
+
+            loginError.textContent = ''; // Clear previous errors
+            
+            if (!email) {
+                loginError.textContent = 'Please enter your email address.';
+                hasError = true;
+            } else if (!isValidEmail(email)) {
+                loginError.textContent = 'Please enter a valid email address.';
+                hasError = true;
+            }
+
+            if (!password) {
+                loginError.textContent += (hasError ? '<br>' : '') + 'Please enter your password.';
+                hasError = true;
+            } else if (password.length < 6) {
+                loginError.textContent += (hasError ? '<br>' : '') + 'Password must be at least 6 characters long.';
+                hasError = true;
+            }
+
+            if (hasError) {
+              return; // Stop further execution if there are errors
+            }
+
+            // Here will be Firebase login logic
+            console.log('Login: ', email, password); // For testing purposes
+             window.location.href = 'index.html'; // Redirect to index.html after successful login
+        });
+
+
+        // Function to validate email format
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
